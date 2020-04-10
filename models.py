@@ -14,6 +14,4 @@ class User(BaseModel):
     username = CharField()
     registered = DateTimeField(default=datetime.now)
 
-
-# Создание таблиц
 DB.create_tables([User, ])

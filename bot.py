@@ -5,8 +5,8 @@ from config import TG_TOKEN
 
 
 class MQBot(Bot):
-    def __init__(self, *args, is_queued_def=True, mqueue=None, **kwargs):
-        super(MQBot, self).__init__(*args, **kwargs)
+    def __init__(self, is_queued_def=True, mqueue=None, *args, **kwargs):
+        super(MQBot, self).__init__(is_queued_def, *args, **kwargs)
         self._is_messages_queued_default = is_queued_def
         self._msg_queue = mqueue or mq.MessageQueue()
 
